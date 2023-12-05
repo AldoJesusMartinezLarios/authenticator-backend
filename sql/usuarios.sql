@@ -1,10 +1,10 @@
 -- Crear la tabla de usuarios con información de autenticación
-CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL,
-    token TEXT
+CREATE TABLE IF NOT EXISTS usuarios (
+    username VARCHAR (100) PRIMARY KEY NOT NULL,
+    password VARCHAR (32) NOT NULL,
+    token VARCHAR(65) NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insertar un usuario de ejemplo con un token
-INSERT INTO users (username, password, token) VALUES ('admin', 'admin_password', '1234');
+-- password 123456789
+INSERT INTO usuarios (username, password, token) VALUES ('usuario@email.com', '25f9e794323b453885f5181f1b624d0b', '1234');
